@@ -1,0 +1,17 @@
+#pragma once
+#include <cuda_runtime_api.h>
+#include <stdbool.h>
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+inline void cuda_check(cudaError_t err, const char *file, int line) {
+  if (err != cudaSuccess) {
+      std::cerr << "CUDA Error: " << cudaGetErrorString(err) 
+                << " in " << file << " at line " << line << std::endl;
+      std::exit(EXIT_FAILURE);
+  }
+}
+
+#define CUDA_CHK(err) (cuda_check((err), __FILE__, __LINE__))
