@@ -1,8 +1,8 @@
 # ParallelMergeSort
 
 Compatibility: 
-g++10 10.5.0
-nvcc 11.5, V11.5.119
+g++10 10.5
+nvcc 11.5
 
 ## Testing
 Build: nvcc -std=c++14 -ccbin=g++-10 -o test ./tests/test-merge.cu
